@@ -1,13 +1,17 @@
+import { Route } from 'react-router';
 import './App.css';
-
+import Home from './components/homepage';
+import Cards from './components/cards';
+import Instruction from './components/instruction';
 function App() {
   return (
     <div className="App">
      
-<h1>Welcome to the flip card game</h1>
-<button> Start game  </button>
-<div></div>
-<button> instruction </button>
+<h1>Test your memory</h1>
+{/* <Home/> */}
+<Route exact path="/" component={Home}/>
+<Route exact path="/Cards" component={Cards}/>
+<Route exact path="/Instruction" component={Instruction}/>
     </div>
   );
 }
