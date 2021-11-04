@@ -96,13 +96,14 @@ const Cards = () => {
   
   const handleClick = (item, i) => {
     // console.log(item);
+  
     if (Firstchoice === null) {
       setFirstchoice(item);
       setcardtry(
         cardtry.map((ele) => {
           if (ele.id === item.id) {
             return { ...ele, isflip: true };
-          } else {
+          } else { 
             return ele;
           }
         })
@@ -122,8 +123,11 @@ const Cards = () => {
               return { ...ele, ismatch: true, isflip: true };
             } else {
               // setcardtry(ele.isflip = false )
+          
+               
+          
               return ele;
-
+           
               /////////
             }
           })
@@ -135,15 +139,29 @@ const Cards = () => {
         count = 0;
         setFirstchoice(null);
       } else {
-        setcardtry(
-          cardtry.map((ele) => {
-            if (ele.ismatch) {
-              return ele;
-            } else {
-              return { ...ele, isflip: false };
-            }
-          })
-        );
+          
+            setcardtry(
+                cardtry.map((ele) => {
+                  if(ele.id === item.id ){
+                      return {...ele , isflip:true}
+                  }else{
+                      return ele
+                  }
+                })
+              ); 
+              /// 
+              setTimeout(() => {
+                  setcardtry(cardtry.map((ele) =>{
+                      if(ele.id === item.id || ele.id === Firstchoice.id){
+                        return {...ele, isflip:false}  
+                      }
+                      else{
+                          return ele
+                      }
+                  }))
+              }, 3000); 
+      
+        
 
         /////
 
@@ -172,7 +190,7 @@ const Cards = () => {
               {" "}
               <img
                 className="back"
-                onClick={() => handleClick(item, i)}
+                onClick={() =>  handleClick(item, i)}
                 src={backimge}
               />{" "}
             </div>
