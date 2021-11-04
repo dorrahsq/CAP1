@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect } from "react";
+
 import "./style.css";
 
 const Cards = () => {
   //is it better to edit on the same array by using setCards or change on a cope?
+  const [cardtry, setcardtry] = useState([]);
   const [Cards, setCards] = useState([
     {
       id: 1,
@@ -25,6 +27,9 @@ const Cards = () => {
       isflip: false,
     },
   ]);
+  const [Firstchoice, setFirstchoice] = useState(null);
+  const [Secondchoice, setSecondchoice] = useState(null);
+
 
   //background imge
   const backimge =
@@ -39,25 +44,61 @@ const Cards = () => {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
     }
-    console.log(array);
+    // console.log(array);
     return array;
   }
-  const shuuffledcards = [...shuuffleCards(pairCards)];
+
+  useEffect(() => {
+    setcardtry(shuuffleCards(pairCards)) 
+  } , []);
+
+//   const shuuffledcards = [...shuuffleCards(pairCards)];
+//   setCards(shuuffleCards(pairCards)); 
 
   // flip Cards on click function -- still
-  const flipCard = () => {
+  const flipCard = (id) => {
     console.log("gg");
+
+    // isflip? setCards([...Cards, Cards.isflip:false]) :"u" 
   };
 
   // ممكن اذا فتحت البطاقة تتخزن باري مع البطاقة الثانية الي افتحه بعدين يقارن الاي دي حقهم اذا نفسه يخزنهم باري جديدة تصير دون وكذا اذا لا يطلعهم من الاري ويرجعهم
+  let count = 0 ; 
+const handleClick =(item)=>{
+    // console.log(item);
+    if(Firstchoice === null ){
+        setFirstchoice(item)  
+        count++ ;
+        // console.log(Firstchoice);
+    } //اذا كانت الفرست تشويس مليانه معناه الايتم الجديد هو الاثاني
+    else{
+       if(item.id=== Firstchoice.id){
+           console.log("same");
+           count = 0 ; 
+           setFirstchoice(null);
+       }
+       else{
+        console.log("diff"); 
+       }
+    }
+    // if(Firstchoice && Secondchoice){
+    //     if(Firstchoice.id === Secondchoice.id){
+    //         console.log("same");
+    //     }
+    // }
+
+}
+
 
   return (
     <div className="allCards">
-      {shuuffledcards.map((item, i) => {
+      {cardtry.map((item, i) => {
         return (
-          <div className="card" onClick={flipCard}>
+          <div className="card" onClick={(()=>(flipCard(item.id)))}> 
+          {/* stoped here */}
             {/* {item.id} */}
-            <img src={item.img} />
+            <img className="front" src={item.img} />
+            <img className="back" onClick={()=>(handleClick(item))} src={backimge} />
           </div>
         );
       })}
