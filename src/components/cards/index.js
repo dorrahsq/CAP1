@@ -8,28 +8,68 @@ const Cards = () => {
   const [Cards, setCards] = useState([
     {
       id: 1,
-      img: "https://i.pinimg.com/564x/53/b2/d6/53b2d6ccc3e2a9c789bcc867ab55cb6c.jpg",
+      name:"a",
       isflip: false,
       ismatch: false ,
+      img: "https://i.pinimg.com/564x/53/b2/d6/53b2d6ccc3e2a9c789bcc867ab55cb6c.jpg",
+      
     },
     {
       id: 2,
-      img: "https://i.pinimg.com/564x/d5/4c/d1/d54cd1fef144248fdedfede82f2261b4.jpg",
+      name:"b",
       isflip: false,
       ismatch: false ,
+      img: "https://i.pinimg.com/564x/d5/4c/d1/d54cd1fef144248fdedfede82f2261b4.jpg",
+      
     },
     {
       id: 3,
-      img: "https://i.pinimg.com/564x/10/8f/c0/108fc03650cd0c8347ec81c172acd105.jpg",
+      name:"c",
       isflip: false,
       ismatch: false ,
+      img: "https://i.pinimg.com/564x/10/8f/c0/108fc03650cd0c8347ec81c172acd105.jpg",
+      
     },
     {
       id: 4,
-      img: "https://i.pinimg.com/564x/9f/29/a1/9f29a1ae09a7f9a8c10afe9d297a23e8.jpg",
+      name:"d",
       isflip: false,
       ismatch: false ,
+      img: "https://i.pinimg.com/564x/9f/29/a1/9f29a1ae09a7f9a8c10afe9d297a23e8.jpg",
+      
     },
+    {
+        id: 5,
+        name:"a",
+        isflip: false,
+      ismatch: false ,
+        img: "https://i.pinimg.com/564x/53/b2/d6/53b2d6ccc3e2a9c789bcc867ab55cb6c.jpg",
+        
+      },
+      {
+        id: 6,
+        name:"b",
+        isflip: false,
+        ismatch: false ,
+        img: "https://i.pinimg.com/564x/d5/4c/d1/d54cd1fef144248fdedfede82f2261b4.jpg",
+       
+      },
+      {
+        id: 7,
+        name:"c",
+        isflip: false,
+        ismatch: false ,
+        img: "https://i.pinimg.com/564x/10/8f/c0/108fc03650cd0c8347ec81c172acd105.jpg",
+        
+      },
+      {
+        id: 8,
+        name:"d",
+        isflip: false,
+        ismatch: false ,
+        img: "https://i.pinimg.com/564x/9f/29/a1/9f29a1ae09a7f9a8c10afe9d297a23e8.jpg",
+        
+      },
   ]);
   const [Firstchoice, setFirstchoice] = useState(null);
   const [Secondchoice, setSecondchoice] = useState(null);
@@ -39,7 +79,7 @@ const Cards = () => {
     "https://i.pinimg.com/564x/ec/71/d5/ec71d540678c1c75be21ee35e7f19753.jpg";
 
   //pair of each card - to save the same id and not repeat the imges url
-  const pairCards = [...Cards, ...Cards];
+  const pairCards = [...Cards];
 
   // shuuffle Cards function
   function shuuffleCards(array) {
@@ -61,22 +101,50 @@ const Cards = () => {
   };
 
   let count = 0;
-  const handleClick = (item) => {
+  const handleClick = (item , i) => {
     // console.log(item);
     if (Firstchoice === null) {
+        
       setFirstchoice(item);
+      setcardtry(cardtry.map((ele)=>{
+          if (ele.id === item.id){
+              return {...ele , isflip:true}
+          }else {
+              return ele
+          }
+      }))
+    
+
+   /////herjh
       count++;
     } else {
-      if (item.id === Firstchoice.id) {
+console.log("item", item);
+console.log("Firstchoice",Firstchoice);
+      if (item.name === Firstchoice.name) {
         console.log("same");
-        setcardtry([...cardtry , item.ismatch= true])
+        setcardtry(cardtry.map((ele)=>{
+            if (ele.name === Firstchoice.name){
+                // setcardtry(ele.isflip = true )
+                return {...ele , ismatch:true , isflip:true}
+            }else {
+                // setcardtry(ele.isflip = false )
+                return  ele
+            }
+        }))
+
+        // setcardtry([...cardtry , item.isflip= true])
+
         console.log(cardtry);
         count = 0;
         setFirstchoice(null);
       } else {
+
+        // setcardtry([...cardtry , item.isflip= false])
+
         console.log("diff");
         count = 0;
         setFirstchoice(null);
+        
       }
     }
   };
@@ -84,12 +152,13 @@ const Cards = () => {
   return (
     <div className="allCards">
       {cardtry.map((item, i) => {
+          {console.log(item);}
         return (
-          <div className="card" onClick={() => flipCard(item.id)}>
+          <div className={item.isflip? "flipped" : ""} onClick={() => flipCard(item.id)}>
             <img className="front" src={item.img} />
             <img
               className="back"
-              onClick={() => handleClick(item)}
+              onClick={() => handleClick(item , i)}
               src={backimge}
             />
           </div>
