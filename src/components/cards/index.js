@@ -93,6 +93,7 @@ const Cards = () => {
   };
 
   let count = 0;
+  
   const handleClick = (item, i) => {
     // console.log(item);
     if (Firstchoice === null) {
