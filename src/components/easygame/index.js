@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
+import { confirm } from "react-confirm-box";
 import "./style.css";
 
 const Easygame = () => {
   //is it better to edit on the same array by using setCards or change on a copy?
   const [cardtry, setcardtry] = useState([]);
-  const [Moves, setMoves] = useState(0)
-  let [rightMoves, setrightMoves] = useState(0)
+  const [Moves, setMoves] = useState(0);
+  let [rightMoves, setrightMoves] = useState(0);
+  
   const [Cards, setCards] = useState([
     {
       id: 1,
@@ -87,7 +89,9 @@ const Easygame = () => {
   // to shuuffle Cards just on the begin
   useEffect(() => {
     setcardtry(shuuffleCards(pairCards));
+   
   }, []);
+  
   //tryyyy
 
   // flip Cards on click function -- still
@@ -97,17 +101,24 @@ const Easygame = () => {
 
   let count = 0;
 
-const showResult = ()=>{
-  if(rightMoves >= 4 ){
-let score = Moves/rightMoves ; 
-if(score > 3 ){
-  alert( "baddd" )
-}
-else{
-  alert(` $<p> bad job  </p> <button> play again  </button>    <button>  Stay in the game </button>   </> `)
-}
-}}
+  const showResult = () => {
+    console.log(rightMoves);
+    if (rightMoves === 3) {
+      //   cardtry.map((ele)=>{
+      // if(ele.isflip=== false){}
+      //   })
+      let score = Moves / rightMoves;
+      if (score > 2) {
+        alert("Bad score ): let's try again! ");
+        refreshPage();
+      } else {
 
+        alert("Great score , let's go to the next level! ");
+        // <Link to="/Gamelevel/Medium"> </Link>;
+
+      }
+    }
+  };
 
   const handleClick = (item, i) => {
     // console.log(item);
@@ -125,14 +136,14 @@ else{
 
       count++;
     } else {
-      setMoves(Moves+1);
+      setMoves(Moves + 1);
       console.log(Moves);
       if (item.name === Firstchoice.name) {
         console.log("same");
-        setrightMoves(rightMoves+1);
-       
-          showResult()
-        
+        setrightMoves(rightMoves + 1);
+
+        showResult();
+
         setcardtry(
           cardtry.map((ele) => {
             if (ele.name === Firstchoice.name) {
@@ -146,7 +157,6 @@ else{
         console.log(cardtry);
         count = 0;
         setFirstchoice(null);
-       
       } else {
         setcardtry(
           cardtry.map((ele) => {
@@ -172,11 +182,8 @@ else{
         console.log("diff");
         count = 0;
         setFirstchoice(null);
-
       }
- 
     }
-    
   };
 
   const refreshPage = () => {
@@ -185,6 +192,7 @@ else{
 
   return (
     <>
+    
       <button onClick={refreshPage}> Restart Game </button>
       <p> Moves: {Moves} </p>
       <p>Right Moves: {rightMoves}</p>

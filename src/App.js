@@ -4,6 +4,8 @@ import Home from './components/homepage';
 import Easygame from './components/easygame';
 import Instruction from './components/instruction';
 import Gamelevel from './components/gameLevel';
+import HardGame from './components/hardgame';
+import MediumGame from './components/mediumgame';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
 <Route exact path="/Instruction" component={Instruction}/>
 <Route exact path="/Gamelevel" component={Gamelevel}/>
 <Route exact path="/Gamelevel/Easy" component={Easygame}/> 
+<Route exact path="/Gamelevel/Medium" component={MediumGame}/> 
+<Route exact path="/Gamelevel/Hard" component={HardGame}/> 
     </div>
   );
 }
