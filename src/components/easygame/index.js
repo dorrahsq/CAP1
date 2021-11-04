@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 
 import "./style.css";
 
-const Cards = () => {
+const Easygame = () => {
   //is it better to edit on the same array by using setCards or change on a copy?
   const [cardtry, setcardtry] = useState([]);
+  const [Moves, setMoves] = useState(0)
+  let [rightMoves, setrightMoves] = useState(0)
   const [Cards, setCards] = useState([
     {
       id: 1,
@@ -86,6 +88,7 @@ const Cards = () => {
   useEffect(() => {
     setcardtry(shuuffleCards(pairCards));
   }, []);
+  //tryyyy
 
   // flip Cards on click function -- still
   const flipCard = (id) => {
@@ -93,123 +96,124 @@ const Cards = () => {
   };
 
   let count = 0;
-  
+
+const showResult = ()=>{
+  if(rightMoves >= 4 ){
+let score = Moves/rightMoves ; 
+if(score > 3 ){
+  alert( "baddd" )
+}
+else{
+  alert(` $<p> bad job  </p> <button> play again  </button>    <button>  Stay in the game </button>   </> `)
+}
+}}
+
+
   const handleClick = (item, i) => {
     // console.log(item);
-  
     if (Firstchoice === null) {
       setFirstchoice(item);
       setcardtry(
         cardtry.map((ele) => {
           if (ele.id === item.id) {
             return { ...ele, isflip: true };
-          } else { 
+          } else {
             return ele;
           }
         })
       );
 
-      /////herjh
       count++;
     } else {
-      console.log("item", item);
-      console.log("Firstchoice", Firstchoice);
+      setMoves(Moves+1);
+      console.log(Moves);
       if (item.name === Firstchoice.name) {
         console.log("same");
+        setrightMoves(rightMoves+1);
+       
+          showResult()
+        
         setcardtry(
           cardtry.map((ele) => {
             if (ele.name === Firstchoice.name) {
-              // setcardtry(ele.isflip = true )
               return { ...ele, ismatch: true, isflip: true };
             } else {
-              // setcardtry(ele.isflip = false )
-          
-               
-          
               return ele;
-           
-              /////////
             }
           })
         );
 
-        // setcardtry([...cardtry , item.isflip= true])
-
         console.log(cardtry);
         count = 0;
         setFirstchoice(null);
+       
       } else {
-          
-            setcardtry(
-                cardtry.map((ele) => {
-                  if(ele.id === item.id ){
-                      return {...ele , isflip:true}
-                  }else{
-                      return ele
-                  }
-                })
-              ); 
-              /// 
-              setTimeout(() => {
-                  setcardtry(cardtry.map((ele) =>{
-                      if(ele.id === item.id || ele.id === Firstchoice.id){
-                        return {...ele, isflip:false}  
-                      }
-                      else{
-                          return ele
-                      }
-                  }))
-              }, 3000); 
-      
-        
-
-        /////
-
-        // setcardtry([...cardtry , item.isflip= false])
+        setcardtry(
+          cardtry.map((ele) => {
+            if (ele.id === item.id) {
+              return { ...ele, isflip: true };
+            } else {
+              return ele;
+            }
+          })
+        );
+        setTimeout(() => {
+          setcardtry(
+            cardtry.map((ele) => {
+              if (ele.id === item.id || ele.id === Firstchoice.id) {
+                return { ...ele, isflip: false };
+              } else {
+                return ele;
+              }
+            })
+          );
+        }, 500);
 
         console.log("diff");
         count = 0;
         setFirstchoice(null);
+
       }
+ 
     }
+    
+  };
+
+  const refreshPage = () => {
+    window.location.reload(false);
   };
 
   return (
-    <div className="allCards">
-      {cardtry.map((item, i) => {
-        if (item.isflip) {
-          return (
-            <div>
-              {" "}
-              <img className="front" src={item.img} />{" "}
-            </div>
-          );
-        } else {
-          return (
-            <div>
-              {" "}
-              <img
-                className="back"
-                onClick={() =>  handleClick(item, i)}
-                src={backimge}
-              />{" "}
-            </div>
-          );
-        }
-        // return (
-        //   <div className={item.isflip? "flipped" : ""} onClick={() => flipCard(item.id)}>
-        //     <img className="front" src={item.img} />
-        //     <img
-        //       className="back"
-        //       onClick={() => handleClick(item , i)}
-        //       src={backimge}
-        //     />
-        //   </div>
-        // );
-      })}
-      {console.log(cardtry)}
-    </div>
+    <>
+      <button onClick={refreshPage}> Restart Game </button>
+      <p> Moves: {Moves} </p>
+      <p>Right Moves: {rightMoves}</p>
+      <div className="allCards">
+        {cardtry.map((item, i) => {
+          if (item.isflip) {
+            return (
+              <div>
+                {" "}
+                <img className="front" src={item.img} />{" "}
+              </div>
+            );
+          } else {
+            return (
+              <div>
+                {" "}
+                <img
+                  className="back"
+                  onClick={() => handleClick(item, i)}
+                  src={backimge}
+                />{" "}
+              </div>
+            );
+          }
+        })}
+        {console.log(cardtry)}
+      </div>
+    </>
   );
 }; ///////
 
-export default Cards;
+export default Easygame;
