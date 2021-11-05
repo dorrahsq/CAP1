@@ -222,7 +222,7 @@ const MediumGame = () => {
               }
             })
           );
-        }, 500);
+        }, 900);
 
         console.log("diff");
         count = 0;

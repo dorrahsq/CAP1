@@ -9,7 +9,7 @@ const HardGame = () => {
   const [cardtry, setcardtry] = useState([]);
   const [Moves, setMoves] = useState(0);
   let [rightMoves, setrightMoves] = useState(0);
-  const [timerState, settimerState] = useState(true)
+  const [timerState, settimerState] = useState(true);
   const [Cards, setCards] = useState([
     {
       id: 1,
@@ -40,114 +40,110 @@ const HardGame = () => {
       img: "https://i.pinimg.com/564x/91/41/41/9141412d401450a7ae97f46779701fe9.jpg",
     },
 
-
-
+    {
+      id: 5,
+      name: "e",
+      isflip: false,
+      ismatch: false,
+      img: "https://i.pinimg.com/564x/70/e2/19/70e2197416805fd98e568e5113864cc1.jpg",
+    },
+    {
+      id: 6,
+      name: "f",
+      isflip: false,
+      ismatch: false,
+      img: "https://i.pinimg.com/564x/0e/c9/e8/0ec9e896335e0a3f3e5b94ec6032b091.jpg",
+    },
 
     {
-        id: 5,
-        name: "e",
-        isflip: false,
-        ismatch: false,
-        img: "https://i.pinimg.com/564x/70/e2/19/70e2197416805fd98e568e5113864cc1.jpg",
-      },
-      {
-        id: 6,
-        name: "f",
-        isflip: false,
-        ismatch: false,
-        img: "https://i.pinimg.com/564x/0e/c9/e8/0ec9e896335e0a3f3e5b94ec6032b091.jpg",
-      },
-
-
-
-
-      {
-        id: 7,
-        name: "j",
-        isflip: false,
-        ismatch: false,
-        img: "https://i.pinimg.com/564x/8c/48/80/8c4880e67e73143b7aacf91e4baf3866.jpg",
-      },
-      {
-        id: 8,
-        name: "h",
-        isflip: false,
-        ismatch: false,
-        img: "https://i.pinimg.com/564x/e7/6a/40/e76a405256deb66f711fe626f0d208e6.jpg",
-      },
-
-
-
-
-
-
+      id: 7,
+      name: "j",
+      isflip: false,
+      ismatch: false,
+      img: "https://i.pinimg.com/564x/8c/48/80/8c4880e67e73143b7aacf91e4baf3866.jpg",
+    },
+    {
+      id: 8,
+      name: "h",
+      isflip: false,
+      ismatch: false,
+      img: "https://i.pinimg.com/564x/e7/6a/40/e76a405256deb66f711fe626f0d208e6.jpg",
+    },
 
     {
       id: 9,
+      name: "i",
+      isflip: false,
+      ismatch: false,
+      img: "https://i.pinimg.com/564x/63/59/99/63599962e5699f36aaecb126d75788ae.jpg",
+    },
+
+    {
+      id: 10,
       name: "a",
       isflip: false,
       ismatch: false,
       img: "https://i.pinimg.com/564x/95/33/f5/9533f5c29e27c321572ae120f5ade551.jpg",
     },
     {
-      id: 10,
+      id: 11,
       name: "b",
       isflip: false,
       ismatch: false,
       img: "https://i.pinimg.com/564x/d2/53/b5/d253b5b75a37854da7e7d81c4d5b8137.jpg",
     },
     {
-      id: 11,
+      id: 12,
       name: "c",
       isflip: false,
       ismatch: false,
       img: "https://i.pinimg.com/564x/b6/0d/b9/b60db9ec09c467b5224b4325d8d71b0a.jpg",
     },
     {
-      id: 12,
+      id: 13,
       name: "d",
       isflip: false,
       ismatch: false,
       img: "https://i.pinimg.com/564x/91/41/41/9141412d401450a7ae97f46779701fe9.jpg",
     },
 
+    {
+      id: 14,
+      name: "e",
+      isflip: false,
+      ismatch: false,
+      img: "https://i.pinimg.com/564x/70/e2/19/70e2197416805fd98e568e5113864cc1.jpg",
+    },
+    {
+      id: 15,
+      name: "f",
+      isflip: false,
+      ismatch: false,
+      img: "https://i.pinimg.com/564x/0e/c9/e8/0ec9e896335e0a3f3e5b94ec6032b091.jpg",
+    },
 
     {
-        id: 13,
-        name: "e",
-        isflip: false,
-        ismatch: false,
-        img: "https://i.pinimg.com/564x/70/e2/19/70e2197416805fd98e568e5113864cc1.jpg",
-      },
-      {
-        id: 14,
-        name: "f",
-        isflip: false,
-        ismatch: false,
-        img: "https://i.pinimg.com/564x/0e/c9/e8/0ec9e896335e0a3f3e5b94ec6032b091.jpg",
-      },
+      id: 16,
+      name: "j",
+      isflip: false,
+      ismatch: false,
+      img: "https://i.pinimg.com/564x/8c/48/80/8c4880e67e73143b7aacf91e4baf3866.jpg",
+    },
+    {
+      id: 17,
+      name: "h",
+      isflip: false,
+      ismatch: false,
+      img: "https://i.pinimg.com/564x/e7/6a/40/e76a405256deb66f711fe626f0d208e6.jpg",
+    },
 
-
-
-
-
-      {
-        id: 15,
-        name: "j",
-        isflip: false,
-        ismatch: false,
-        img: "https://i.pinimg.com/564x/8c/48/80/8c4880e67e73143b7aacf91e4baf3866.jpg",
-      },
-      {
-        id: 16,
-        name: "h",
-        isflip: false,
-        ismatch: false,
-        img: "https://i.pinimg.com/564x/e7/6a/40/e76a405256deb66f711fe626f0d208e6.jpg",
-      },
-
-
-    
+    {
+      id: 18,
+      name: "i",
+      isflip: false,
+      ismatch: false,
+      img: "https://i.pinimg.com/564x/63/59/99/63599962e5699f36aaecb126d75788ae.jpg",
+    },
   ]);
   const [Firstchoice, setFirstchoice] = useState(null);
   const [Secondchoice, setSecondchoice] = useState(null);
@@ -185,9 +181,10 @@ const HardGame = () => {
 
   const showResult = () => {
     console.log(rightMoves);
-    if (rightMoves === 7) {
+    if (rightMoves === 8) {
       let score = Moves / rightMoves;
-      if (score > 3) { //2
+      if (score > 3) {
+        //2
         alert("Bad score ): let's try again! ");
         refreshPage();
       } else {
@@ -254,7 +251,7 @@ const HardGame = () => {
               }
             })
           );
-        }, 500);
+        }, 900);
 
         console.log("diff");
         count = 0;
@@ -267,55 +264,60 @@ const HardGame = () => {
     window.location.reload(false);
   };
 
-
   return (
     <>
+      <div className="relDiv3">
+        <section>
+          <p className="gameChoice3"> Moves: {Moves} </p>
+          <p className="gameChoice3">Right Moves: {rightMoves}</p>
+          <button id="btn3" className="restartBtn3" onClick={refreshPage}>
+            {" "}
+            Restart Game{" "}
+          </button>{" "}
+        </section>
 
-<div className="relDiv2"> 
-    
-      <section>
-        <p className="gameChoice2"> Moves: {Moves} </p>
-        <p className="gameChoice2">Right Moves: {rightMoves}</p>
-        <button className="restartBtn2" onClick={refreshPage}>
-          {" "}
-          Restart Game{" "}
-        </button>{" "}
-      </section>
+        <div className="allCards3">
+          {cardtry.map((item, i) => {
+            if (item.isflip) {
+              return (
+                <div className="cardDiv3">
+                  {" "}
+                  <img className="front3" src={item.img} />{" "}
+                </div>
+              );
+            } else {
+              return (
+                <div className="cardDiv3">
+                  {" "}
+                  <img
+                    className="back3"
+                    onClick={() => handleClick(item, i)}
+                    src={backimge}
+                  />{" "}
+                </div>
+              );
+            }
+          })}
+          {console.log(cardtry)}
+        </div>
 
-      <div className="allCards2">
-        {cardtry.map((item, i) => {
-          if (item.isflip) {
-            return (
-              <div className="cardDiv2">
+        {/* <Timer time={15} go={timerState}  /> */}
+
+        {
+          model ? (
+            <div className="model">
+              {" "}
+              Great score , let's go to the next level{" "}
+              <button className="letsBtn">
                 {" "}
-                <img className="front2" src={item.img} />{" "}
-              </div>
-            );
-          } else {
-            return (
-              <div className="cardDiv2">
-                {" "}
-                <img
-                  className="back2"
-                  onClick={() => handleClick(item, i)}
-                  src={backimge}
-                />{" "}
-              </div>
-            );
-          }
-        })}
-        {console.log(cardtry)}
+                <Link to="/Gamelevel/Medium"> let's go </Link>{" "}
+              </button>{" "}
+            </div>
+          ) : null //absulote
+        }
       </div>
-
-{/* <Timer time={15} go={timerState}  /> */}
-
-    {model ? <div className="model" > Great score , let's go to the next level <button className="letsBtn" > <Link to="/Gamelevel/Medium"> let's go  </Link> </button> </div> : null //absulote 
-         } 
-        </div> 
     </>
   );
 }; ///////
 
 export default HardGame;
-
-
