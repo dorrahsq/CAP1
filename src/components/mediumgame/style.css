@@ -1,0 +1,87 @@
+
+.allCards2{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 150px;
+
+}
+
+.allCards2 div{
+    width : 217px;
+    height: 217px;
+    margin: 5px;
+}
+.allCards2 div img {
+    width : 100%;
+    height: 100%;  
+    border-radius: 5px;
+}
+
+.gameChoice2{
+    display: inline;
+
+}
+
+section :last-child{
+    margin-left: 225px;
+}
+
+section :first-child{
+    margin-right: 190px;
+}
+
+section{
+margin-top: 60px ;
+margin-bottom: 30px ;
+font-family:fantasy;
+font-size: 27px;
+}
+
+.restartBtn2{
+    font-family:fantasy;
+    font-size: 26px;
+    border-radius: 6px;
+    border-style: none;
+    padding: 3px 10px;
+    transition: 0.5s ease;
+    color: rgb(111, 75, 168);
+}
+.restartBtn2:hover{
+    transform: scale(1.10) perspective(1px); 
+    background-color: rgba(223, 219, 219, 0.534);
+   
+    color: rgb(211, 160, 40);
+}
+
+/* .flipped .front {
+    transform:rotateY(90deg)
+ 
+}
+
+.allCards .front{
+    transform:rotateY(0deg) ; 
+     position: absolute;
+} */
+
+.letsBtn2{
+    display: block;
+    margin:  0 650px;
+   
+}
+
+.model {
+   background-color: rgba(188, 143, 143, 0.171);
+ position: absolute;
+ width: 100%;
+ height: 100%;
+
+}
+
+.relDiv2{
+    position: relative;
+
+} 
+
+
+
