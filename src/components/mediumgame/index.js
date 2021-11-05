@@ -275,7 +275,7 @@ const MediumGame = () => {
         {console.log(cardtry)}
       </div>
 
-{/* <Timer time={15} go={timerState}  /> */}
+{/* <Timer time={40} go={timerState}  /> */}
 
     {model ? <div className="model" > Great score , let's go to the next level <button className="letsBtn" > <Link to="/Gamelevel/Medium"> let's go  </Link> </button> </div> : null //absulote 
          } 

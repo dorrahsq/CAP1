@@ -1,89 +1,88 @@
-
-
-.allCards{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0 100px;
-
+.allCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 100px;
 }
 
-
-.allCards div{
-    width : 260px;
-    height: 260px;
-    margin: 5px;
+.allCards div {
+  width: 260px;
+  height: 260px;
+  margin: 5px;
 }
 .allCards div img {
-    width : 100%;
-    height: 100%;  
-    border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
 }
 
-.gameChoice{
-    display: inline;
-
+.gameChoice {
+  display: inline;
 }
 
-section :last-child{
-    margin-left: 300px;
+section :last-child {
+  margin-left: 300px;
 }
 
-section :first-child{
-    margin-right: 290px;
+section :first-child {
+  margin-right: 290px;
 }
 
-section{
-margin-top: 60px ;
-margin-bottom: 30px ;
-font-family:fantasy;
-font-size: 27px;
+section {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-family: fantasy;
+  font-size: 27px;
 }
 
-.restartBtn{
-    font-family:fantasy;
-    font-size: 26px;
-    border-radius: 6px;
-    border-style: none;
-    padding: 3px 10px;
-    transition: 0.5s ease;
-    color: rgb(111, 75, 168);
-}
-.restartBtn:hover{
-    transform: scale(1.10) perspective(1px); 
-    background-color: rgba(223, 219, 219, 0.534);
-   
-    color: rgb(211, 160, 40);
+.restartBtn {
+  font-family: fantasy;
+  font-size: 26px;
+  border-radius: 6px;
+  border-style: none;
+  padding: 3px 10px;
+  transition: 0.5s ease;
+  color: rgb(111, 75, 168);
 }
 
-/* .flipped .front {
-    transform:rotateY(90deg)
- 
+.restartBtn:hover {
+  transform: scale(1.1) perspective(1px);
+  background-color: rgba(223, 219, 219, 0.534);
+
+  color: rgb(211, 160, 40);
 }
 
-.allCards .front{
-    transform:rotateY(0deg) ; 
-     position: absolute;
-} */
-
-.letsBtn{
-    display: block;
-    margin:  0 650px;
-   
+.letsBtn {
+  display: block;
+  margin: 0 650px;
 }
 
 .model {
-   background-color: rgba(188, 143, 143, 0.171);
- position: absolute;
- width: 100%;
- height: 100%;
-
+  background-color: rgba(188, 143, 143, 0.171);
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
-.relDiv{
-    position: relative;
+.relDiv {
+  position: relative;
+}
 
-} 
+.back {
+  transition: transform 0.9s;
+}
 
+.back:active {
+  transform: rotateY(180deg);
+}
 
+.front {
+  transition: transform 0.9s;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+}
 
+.cardDiv {
+  transform-origin: center right;
+  position: relative;
+}

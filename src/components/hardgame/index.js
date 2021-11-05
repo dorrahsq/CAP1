@@ -301,7 +301,7 @@ const HardGame = () => {
           {console.log(cardtry)}
         </div>
 
-        {/* <Timer time={15} go={timerState}  /> */}
+        {/* <Timer time={90} go={timerState}  /> */}
 
         {
           model ? (

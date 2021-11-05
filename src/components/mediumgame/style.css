@@ -83,5 +83,22 @@ font-size: 27px;
 
 } 
 
-
+.back2 {
+    transition: transform 0.9s;
+  }
+  
+  .back2:active {
+    transform: rotateY(180deg);
+  }
+  
+  .front2 {
+    transition: transform 0.9s;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+  }
+  
+  .cardDiv2 {
+    transform-origin: center right;
+    position: relative;
+  }
 
