@@ -47,11 +47,13 @@ font-size: 27px;
     border-style: none;
     padding: 3px 10px;
     transition: 0.5s ease;
+    color: rgb(111, 75, 168);
 }
 .restartBtn:hover{
     transform: scale(1.10) perspective(1px); 
-    background-color: rgba(177, 176, 176, 0.534);
-    color: rgb(111, 75, 168);
+    background-color: rgba(223, 219, 219, 0.534);
+   
+    color: rgb(211, 160, 40);
 }
 
 /* .flipped .front {
