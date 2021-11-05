@@ -16,7 +16,7 @@ const Easygame = () => {
       name: "a",
       isflip: false,
       ismatch: false,
-      img: "https://i.pinimg.com/564x/95/33/f5/9533f5c29e27c321572ae120f5ade551.jpg",
+      img: "https://i.pinimg.com/564x/ce/14/09/ce1409df01a7a907e4ed941b0bf7292f.jpg",
     },
     {
       id: 2,
@@ -34,7 +34,7 @@ const Easygame = () => {
     },
     {
       id: 4,
-      name: "d",
+      name: "d",//
       isflip: false,
       ismatch: false,
       img: "https://i.pinimg.com/564x/91/41/41/9141412d401450a7ae97f46779701fe9.jpg",
@@ -44,7 +44,7 @@ const Easygame = () => {
       name: "a",
       isflip: false,
       ismatch: false,
-      img: "https://i.pinimg.com/564x/95/33/f5/9533f5c29e27c321572ae120f5ade551.jpg",
+      img: "https://i.pinimg.com/564x/ce/14/09/ce1409df01a7a907e4ed941b0bf7292f.jpg",
     },
     {
       id: 6,

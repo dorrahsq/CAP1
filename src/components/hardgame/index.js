@@ -16,7 +16,7 @@ const HardGame = () => {
       name: "a",
       isflip: false,
       ismatch: false,
-      img: "https://i.pinimg.com/564x/95/33/f5/9533f5c29e27c321572ae120f5ade551.jpg",
+      img: "https://i.pinimg.com/564x/ce/14/09/ce1409df01a7a907e4ed941b0bf7292f.jpg",
     },
     {
       id: 2,
@@ -45,7 +45,7 @@ const HardGame = () => {
       name: "e",
       isflip: false,
       ismatch: false,
-      img: "https://i.pinimg.com/564x/70/e2/19/70e2197416805fd98e568e5113864cc1.jpg",
+      img: "https://i.pinimg.com/564x/9b/51/e6/9b51e6507e4b684e0e494b3fb8317a4a.jpg",
     },
     {
       id: 6,
@@ -83,7 +83,7 @@ const HardGame = () => {
       name: "a",
       isflip: false,
       ismatch: false,
-      img: "https://i.pinimg.com/564x/95/33/f5/9533f5c29e27c321572ae120f5ade551.jpg",
+      img: "https://i.pinimg.com/564x/ce/14/09/ce1409df01a7a907e4ed941b0bf7292f.jpg",
     },
     {
       id: 11,
@@ -112,7 +112,7 @@ const HardGame = () => {
       name: "e",
       isflip: false,
       ismatch: false,
-      img: "https://i.pinimg.com/564x/70/e2/19/70e2197416805fd98e568e5113864cc1.jpg",
+      img: "https://i.pinimg.com/564x/9b/51/e6/9b51e6507e4b684e0e494b3fb8317a4a.jpg",
     },
     {
       id: 15,
