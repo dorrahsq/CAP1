@@ -1,0 +1,25 @@
+.firstHeader{
+    font-family:fantasy;
+    font-size: 100px;
+  }
+
+  .btnLink{
+      text-decoration: none;
+      color: black;
+  }
+
+  .homeBtn{
+      margin: 20px;
+      font-family:fantasy;
+      font-size: 30px;
+      border-radius: 6px;
+      border-style: none;
+      padding: 5px 15px;
+      transition: 0.5s ease;
+  }
+  .homeBtn:hover{
+    transform: scale(1.25) perspective(1px); 
+    background-color: rgba(177, 176, 176, 0.534);
+  }
+
+

@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
      
-<h1>Test your memory</h1>
+
 {/* <Home/> */}
 <Route exact path="/" component={Home}/>
 {/* <Route exact path="/Cards" component={Cards}/> */}

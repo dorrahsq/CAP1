@@ -192,10 +192,12 @@ const Easygame = () => {
 
   return (
     <>
-    
-      <button onClick={refreshPage}> Restart Game </button>
-      <p> Moves: {Moves} </p>
-      <p>Right Moves: {rightMoves}</p>
+   <section>
+  
+      <p className="gameChoice"> Moves: {Moves} </p>
+      <p className="gameChoice">Right Moves: {rightMoves}</p> 
+      <button className="restartBtn" onClick={refreshPage}> Restart Game </button> </section>
+
       <div className="allCards">
         {cardtry.map((item, i) => {
           if (item.isflip) {
@@ -220,6 +222,9 @@ const Easygame = () => {
         })}
         {console.log(cardtry)}
       </div>
+
+  
+
     </>
   );
 }; ///////
