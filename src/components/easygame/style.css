@@ -1,16 +1,19 @@
+
+
 .allCards{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 0 100px;
+
 }
+
 
 .allCards div{
     width : 260px;
     height: 260px;
     margin: 5px;
 }
-
 .allCards div img {
     width : 100%;
     height: 100%;  
@@ -48,7 +51,7 @@ font-size: 27px;
 .restartBtn:hover{
     transform: scale(1.10) perspective(1px); 
     background-color: rgba(177, 176, 176, 0.534);
-    color: rgb(199, 8, 8);
+    color: rgb(111, 75, 168);
 }
 
 /* .flipped .front {
@@ -60,3 +63,25 @@ font-size: 27px;
     transform:rotateY(0deg) ; 
      position: absolute;
 } */
+
+.letsBtn{
+    display: block;
+    margin:  0 650px;
+   
+}
+
+.model {
+   background-color: rgba(188, 143, 143, 0.171);
+ position: absolute;
+ width: 100%;
+ height: 100%;
+
+}
+
+.relDiv{
+    position: relative;
+
+} 
+
+
+

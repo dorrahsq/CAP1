@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { confirm } from "react-confirm-box";
 import "./style.css";
+import Timer from "../Timer";
 
 const Easygame = () => {
   //is it better to edit on the same array by using setCards or change on a copy?
   const [cardtry, setcardtry] = useState([]);
   const [Moves, setMoves] = useState(0);
   let [rightMoves, setrightMoves] = useState(0);
-  
+  const [timerState, settimerState] = useState(true)
   const [Cards, setCards] = useState([
     {
       id: 1,
@@ -69,10 +70,11 @@ const Easygame = () => {
   ]);
   const [Firstchoice, setFirstchoice] = useState(null);
   const [Secondchoice, setSecondchoice] = useState(null);
+  const [model, setModel] = useState(false);
 
   //background imge
   const backimge =
-    "https://i.pinimg.com/564x/ec/71/d5/ec71d540678c1c75be21ee35e7f19753.jpg";
+    "https://i.pinimg.com/564x/29/14/18/29141838a9191ba491f737fa5e1ae9e5.jpg";
 
   //pair of each card - to save the same id and not repeat the imges url
   const pairCards = [...Cards];
@@ -89,9 +91,8 @@ const Easygame = () => {
   // to shuuffle Cards just on the begin
   useEffect(() => {
     setcardtry(shuuffleCards(pairCards));
-   
   }, []);
-  
+
   //tryyyy
 
   // flip Cards on click function -- still
@@ -104,18 +105,13 @@ const Easygame = () => {
   const showResult = () => {
     console.log(rightMoves);
     if (rightMoves === 3) {
-      //   cardtry.map((ele)=>{
-      // if(ele.isflip=== false){}
-      //   })
       let score = Moves / rightMoves;
-      if (score > 2) {
+      if (score > 3) { //2
         alert("Bad score ): let's try again! ");
         refreshPage();
       } else {
-
-        alert("Great score , let's go to the next level! ");
-        // <Link to="/Gamelevel/Medium"> </Link>;
-
+        setModel(true);
+        settimerState(false);
       }
     }
   };
@@ -190,26 +186,33 @@ const Easygame = () => {
     window.location.reload(false);
   };
 
+
   return (
     <>
-   <section>
-  
-      <p className="gameChoice"> Moves: {Moves} </p>
-      <p className="gameChoice">Right Moves: {rightMoves}</p> 
-      <button className="restartBtn" onClick={refreshPage}> Restart Game </button> </section>
+
+<div className="relDiv"> 
+    
+      <section>
+        <p className="gameChoice"> Moves: {Moves} </p>
+        <p className="gameChoice">Right Moves: {rightMoves}</p>
+        <button className="restartBtn" onClick={refreshPage}>
+          {" "}
+          Restart Game{" "}
+        </button>{" "}
+      </section>
 
       <div className="allCards">
         {cardtry.map((item, i) => {
           if (item.isflip) {
             return (
-              <div>
+              <div className="cardDiv">
                 {" "}
                 <img className="front" src={item.img} />{" "}
               </div>
             );
           } else {
             return (
-              <div>
+              <div className="cardDiv">
                 {" "}
                 <img
                   className="back"
@@ -223,8 +226,11 @@ const Easygame = () => {
         {console.log(cardtry)}
       </div>
 
-  
+{/* <Timer time={15} go={timerState}  /> */}
 
+    {model ? <div className="model" > Great score , let's go to the next level <button className="letsBtn" > <Link to="/Gamelevel/Medium"> let's go  </Link> </button> </div> : null //absulote 
+         } 
+        </div> 
     </>
   );
 }; ///////

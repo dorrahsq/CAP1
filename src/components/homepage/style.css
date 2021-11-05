@@ -1,12 +1,22 @@
 .firstHeader{
     font-family:fantasy;
     font-size: 100px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 12px #7C3621;
+
   }
 
   .btnLink{
       text-decoration: none;
       color: black;
+
   }
+
+  .btnLink:hover{
+    text-decoration: none;
+    /* color: rgba(255, 255, 255, 0.925); */
+    
+}
 
   .homeBtn{
       margin: 20px;
@@ -16,10 +26,43 @@
       border-style: none;
       padding: 5px 15px;
       transition: 0.5s ease;
+      background-color: rgba(231, 224, 224, 0.959);
+      
   }
   .homeBtn:hover{
     transform: scale(1.25) perspective(1px); 
-    background-color: rgba(177, 176, 176, 0.534);
+    background-color: rgba(255, 255, 255, 0.986);
+   
   }
 
 
+
+#backGroundImg{
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: rgb(0, 0, 0);}
+
+
+
+
+
+  .describeItem {
+    /* background-color: rgba(61, 34, 34, 0.548); */
+    margin: 0 10%;
+    margin-top: 120px;
+    margin-bottom: 10%;
+    border-radius: 10px;
+    padding: 2%;
+    text-align: center;
+    perspective: 100px;
+    box-shadow: 0px 0px 42px 2px rgba(0, 0, 0, 0.72);
+    -webkit-box-shadow: 0px 0px 42px 2px rgba(0, 0, 0, 0.72);
+    -moz-box-shadow: 0px 0px 42px 2px rgba(0, 0, 0, 0.72);
+  }
