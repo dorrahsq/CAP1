@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { confirm } from "react-confirm-box";
 import "./style.css";
 import Timer from "../Timer";
+import { FaBackward } from 'react-icons/fa';
+
 
 const MediumGame = () => {
   //is it better to edit on the same array by using setCards or change on a copy?
@@ -240,7 +242,8 @@ const MediumGame = () => {
     <>
 
 <div className="relDiv2"> 
-    
+<p className="divAct"> <Link className="homeLink" to="/"> <FaBackward  className="homeIcon"/> <span> Home </span> </Link>   </p>
+
       <section>
         <p className="gameChoice2"> Moves: {Moves} </p>
         <p className="gameChoice2">Right Moves: {rightMoves}</p>

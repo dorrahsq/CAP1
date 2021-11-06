@@ -32,8 +32,6 @@ section :first-child{
 }
 
 section{
-margin-top: 60px ;
-margin-bottom: 30px ;
 font-family:fantasy;
 font-size: 27px;
 
@@ -54,16 +52,6 @@ font-size: 27px;
    
     color: rgb(211, 160, 40);
 }
-
-/* .flipped .front {
-    transform:rotateY(90deg)
- 
-}
-
-.allCards .front{
-    transform:rotateY(0deg) ; 
-     position: absolute;
-} */
 
 .letsBtn3{
     display: block;
@@ -104,3 +92,26 @@ font-size: 27px;
     position: relative;
   }
 
+span{
+   /* margin-left: 2px; */
+ font-size: 23px;
+/* color: rgba(0, 0, 0, 0.267); */
+}
+
+
+
+.homeIcon{
+    /* color: rgba(0, 0, 0, 0.219); */
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.548);
+}
+.homeLink{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.548);
+    font-family:fantasy;
+
+}
+.divAct{
+    text-align: left;
+    margin-right: 1330px;
+}
