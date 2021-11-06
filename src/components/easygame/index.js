@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { confirm } from "react-confirm-box";
 import "./style.css";
 import Timer from "../Timer";
 import { FaBackward } from "react-icons/fa";
+import { BiHappyHeartEyes } from 'react-icons/bi';
 
 const Easygame = () => {
   //is it better to edit on the same array by using setCards or change on a copy?
@@ -94,8 +94,6 @@ const Easygame = () => {
     setcardtry(shuuffleCards(pairCards));
   }, []);
 
- 
-
   let count = 0;
 
   const showResult = () => {
@@ -147,7 +145,6 @@ const Easygame = () => {
           })
         );
 
-        
         count = 0;
         setFirstchoice(null);
       } else {
@@ -188,9 +185,9 @@ const Easygame = () => {
       <div className="relDiv">
         <p className="divAct">
           {" "}
-          <Link className="homeLink" to="/">
+          <Link className="homeLink1" to="/">
             {" "}
-            <FaBackward className="homeIcon" /> <span> Home </span>{" "}
+            <FaBackward className="homeIcon" /> Home
           </Link>{" "}
         </p>
 
@@ -225,19 +222,21 @@ const Easygame = () => {
               );
             }
           })}
-    
         </div>
 
-        {/* <Timer time={15} go={timerState} /> */}
+        <Timer time={15} go={timerState} />
 
         {
           model ? (
             <div className="model">
-              {" "}
-              Great score 😍 , let's go to the next level{" "}
+              {/* <img id="backGroundImg" src="https://i.pinimg.com/originals/78/cc/6e/78cc6e42b85291f8edb4c9ca7a7a1d60.gif" alt=""/>{" "} */}
+              Great score <BiHappyHeartEyes/> let's go to the next level!{" "}
               <button className="letsBtn">
                 {" "}
-                <Link to="/Gamelevel/Medium"> let's go </Link>{" "}
+                <Link className="btnLink" to="/Gamelevel/Medium">
+                  {" "}
+                  let's go{" "}
+                </Link>{" "}
               </button>{" "}
             </div>
           ) : null //absulote

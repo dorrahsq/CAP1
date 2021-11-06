@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 class Timer extends React.Component {
   constructor(props) {
@@ -63,7 +64,7 @@ class Timer extends React.Component {
   render() {
     // if (this.props.go === true) {
     return (
-      <div>
+      <div className="timerStyle">
         {this.startTimer()}
         TIME LEFT: {this.state.time.s}
       </div>

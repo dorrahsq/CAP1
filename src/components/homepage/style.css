@@ -1,15 +1,15 @@
 .firstHeader{
-    font-family:fantasy;
+ font-family:cursive;
     font-size: 100px;
     color: rgb(255, 255, 255);
-    text-shadow: 0px 0px 12px #7C3621;
+    margin-top: 50px;
+    /* text-shadow: 0px 0px 12px #7C3621; */
 
   }
 
   .btnLink{
       text-decoration: none;
       color: black;
-
   }
 
   .btnLink:hover{
@@ -17,17 +17,20 @@
     /* color: rgba(255, 255, 255, 0.925); */
     
 }
+#lastB{
+  margin-bottom: 55px;
+}
 
   .homeBtn{
       margin: 20px;
-      font-family:fantasy;
+      /* font-family:cursive; */
       font-size: 30px;
       border-radius: 6px;
       border-style: none;
       padding: 5px 15px;
       transition: 0.5s ease;
       background-color: rgba(231, 224, 224, 0.959);
-      
+      font-family:cursive;
   }
   .homeBtn:hover{
     transform: scale(1.25) perspective(1px); 
@@ -54,7 +57,8 @@
 
 
   .describeItem {
-    /* background-color: rgba(61, 34, 34, 0.548); */
+    background-color: rgba(24, 16, 16, 0.842);
+    
     margin: 0 10%;
     margin-top: 120px;
     margin-bottom: 10%;
@@ -62,7 +66,9 @@
     padding: 2%;
     text-align: center;
     perspective: 100px;
-    box-shadow: 0px 0px 42px 2px rgba(0, 0, 0, 0.72);
+    box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.178);
+
+    /* box-shadow: 0px 0px 42px 2px rgba(0, 0, 0, 0.72);
     -webkit-box-shadow: 0px 0px 42px 2px rgba(0, 0, 0, 0.72);
-    -moz-box-shadow: 0px 0px 42px 2px rgba(0, 0, 0, 0.72);
+    -moz-box-shadow: 0px 0px 42px 2px rgba(0, 0, 0, 0.72); */
   }
