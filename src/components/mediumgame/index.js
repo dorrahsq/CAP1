@@ -3,15 +3,14 @@ import { Link } from "react-router-dom";
 import { confirm } from "react-confirm-box";
 import "./style.css";
 import Timer from "../Timer";
-import { FaBackward } from 'react-icons/fa';
-
+import { FaBackward } from "react-icons/fa";
 
 const MediumGame = () => {
   //is it better to edit on the same array by using setCards or change on a copy?
   const [cardtry, setcardtry] = useState([]);
   const [Moves, setMoves] = useState(0);
   let [rightMoves, setrightMoves] = useState(0);
-  const [timerState, settimerState] = useState(true)
+  const [timerState, settimerState] = useState(true);
   const [Cards, setCards] = useState([
     {
       id: 1,
@@ -42,31 +41,20 @@ const MediumGame = () => {
       img: "https://i.pinimg.com/564x/91/41/41/9141412d401450a7ae97f46779701fe9.jpg",
     },
 
-
-
-
     {
-        id: 5,
-        name: "e",
-        isflip: false,
-        ismatch: false,
-        img: "https://i.pinimg.com/564x/9b/51/e6/9b51e6507e4b684e0e494b3fb8317a4a.jpg",
-      },
-      {
-        id: 6,
-        name: "f",
-        isflip: false,
-        ismatch: false,
-        img: "https://i.pinimg.com/564x/0e/c9/e8/0ec9e896335e0a3f3e5b94ec6032b091.jpg",
-      },
-
-
-
-
-
-
-
-
+      id: 5,
+      name: "e",
+      isflip: false,
+      ismatch: false,
+      img: "https://i.pinimg.com/564x/9b/51/e6/9b51e6507e4b684e0e494b3fb8317a4a.jpg",
+    },
+    {
+      id: 6,
+      name: "f",
+      isflip: false,
+      ismatch: false,
+      img: "https://i.pinimg.com/564x/0e/c9/e8/0ec9e896335e0a3f3e5b94ec6032b091.jpg",
+    },
 
     {
       id: 7,
@@ -97,27 +85,20 @@ const MediumGame = () => {
       img: "https://i.pinimg.com/564x/91/41/41/9141412d401450a7ae97f46779701fe9.jpg",
     },
 
-
     {
-        id: 11,
-        name: "e", ////////hereeeeeeeeeeeee
-        isflip: false,
-        ismatch: false,
-        img: "https://i.pinimg.com/564x/9b/51/e6/9b51e6507e4b684e0e494b3fb8317a4a.jpg",
-      },
-      {
-        id: 12,
-        name: "f",
-        isflip: false,
-        ismatch: false,
-        img: "https://i.pinimg.com/564x/0e/c9/e8/0ec9e896335e0a3f3e5b94ec6032b091.jpg",
-      },
-
-
-
-
-
-    
+      id: 11,
+      name: "e", ////////hereeeeeeeeeeeee
+      isflip: false,
+      ismatch: false,
+      img: "https://i.pinimg.com/564x/9b/51/e6/9b51e6507e4b684e0e494b3fb8317a4a.jpg",
+    },
+    {
+      id: 12,
+      name: "f",
+      isflip: false,
+      ismatch: false,
+      img: "https://i.pinimg.com/564x/0e/c9/e8/0ec9e896335e0a3f3e5b94ec6032b091.jpg",
+    },
   ]);
   const [Firstchoice, setFirstchoice] = useState(null);
   const [Secondchoice, setSecondchoice] = useState(null);
@@ -144,20 +125,14 @@ const MediumGame = () => {
     setcardtry(shuuffleCards(pairCards));
   }, []);
 
-  //tryyyy
-
-  // flip Cards on click function -- still
-  const flipCard = (id) => {
-    console.log("gg");
-  };
-
   let count = 0;
 
   const showResult = () => {
     console.log(rightMoves);
     if (rightMoves === 5) {
       let score = Moves / rightMoves;
-      if (score > 3) { //2
+      if (score > 3) {
+        //2
         alert("Bad score ): let's try again! ");
         refreshPage();
       } else {
@@ -184,7 +159,7 @@ const MediumGame = () => {
       count++;
     } else {
       setMoves(Moves + 1);
-      console.log(Moves);
+ 
       if (item.name === Firstchoice.name) {
         console.log("same");
         setrightMoves(rightMoves + 1);
@@ -201,7 +176,7 @@ const MediumGame = () => {
           })
         );
 
-        console.log(cardtry);
+        
         count = 0;
         setFirstchoice(null);
       } else {
@@ -237,55 +212,68 @@ const MediumGame = () => {
     window.location.reload(false);
   };
 
-
   return (
     <>
-
-<div className="relDiv2"> 
-<p className="divAct"> <Link className="homeLink" to="/"> <FaBackward  className="homeIcon"/> <span> Home </span> </Link>   </p>
-
-      <section>
-        <p className="gameChoice2"> Moves: {Moves} </p>
-        <p className="gameChoice2">Right Moves: {rightMoves}</p>
-        <button className="restartBtn2" onClick={refreshPage}>
+      <div className="relDiv2">
+        <p className="divAct">
           {" "}
-          Restart Game{" "}
-        </button>{" "}
-      </section>
+          <Link className="homeLink" to="/">
+            {" "}
+            <FaBackward className="homeIcon" /> <span> Home </span>{" "}
+          </Link>{" "}
+        </p>
 
-      <div className="allCards2">
-        {cardtry.map((item, i) => {
-          if (item.isflip) {
-            return (
-              <div className="cardDiv2">
+        <section>
+          <p className="gameChoice2"> Moves: {Moves} </p>
+          <p className="gameChoice2">Right Moves: {rightMoves}</p>
+          <button className="restartBtn2" onClick={refreshPage}>
+            {" "}
+            Restart Game{" "}
+          </button>{" "}
+        </section>
+
+        <div className="allCards2">
+          {cardtry.map((item, i) => {
+            if (item.isflip) {
+              return (
+                <div className="cardDiv2">
+                  {" "}
+                  <img className="front2" src={item.img} />{" "}
+                </div>
+              );
+            } else {
+              return (
+                <div className="cardDiv2">
+                  {" "}
+                  <img
+                    className="back2"
+                    onClick={() => handleClick(item, i)}
+                    src={backimge}
+                  />{" "}
+                </div>
+              );
+            }
+          })}
+         
+        </div>
+
+        {/* <Timer time={40} go={timerState} /> */}
+
+        {
+          model ? (
+            <div className="model">
+              {" "}
+              Great score 😍 , let's go to the next level{" "}
+              <button className="letsBtn">
                 {" "}
-                <img className="front2" src={item.img} />{" "}
-              </div>
-            );
-          } else {
-            return (
-              <div className="cardDiv2">
-                {" "}
-                <img
-                  className="back2"
-                  onClick={() => handleClick(item, i)}
-                  src={backimge}
-                />{" "}
-              </div>
-            );
-          }
-        })}
-        {console.log(cardtry)}
+                <Link to="/Gamelevel/Hard"> let's go </Link>{" "}
+              </button>{" "}
+            </div>
+          ) : null //absulote
+        }
       </div>
-
-{/* <Timer time={40} go={timerState}  /> */}
-
-    {model ? <div className="model" > Great score , let's go to the next level <button className="letsBtn" > <Link to="/Gamelevel/Medium"> let's go  </Link> </button> </div> : null //absulote 
-         } 
-        </div> 
     </>
   );
 }; ///////
 
 export default MediumGame;
-

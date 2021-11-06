@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import { confirm } from "react-confirm-box";
 import "./style.css";
 import Timer from "../Timer";
-import { FaBackward } from 'react-icons/fa';
+import { FaBackward } from "react-icons/fa";
 
 const Easygame = () => {
   //is it better to edit on the same array by using setCards or change on a copy?
   const [cardtry, setcardtry] = useState([]);
   const [Moves, setMoves] = useState(0);
   let [rightMoves, setrightMoves] = useState(0);
-  const [timerState, settimerState] = useState(true)
+  const [timerState, settimerState] = useState(true);
   const [Cards, setCards] = useState([
     {
       id: 1,
@@ -35,7 +35,7 @@ const Easygame = () => {
     },
     {
       id: 4,
-      name: "d",//
+      name: "d", //
       isflip: false,
       ismatch: false,
       img: "https://i.pinimg.com/564x/91/41/41/9141412d401450a7ae97f46779701fe9.jpg",
@@ -94,12 +94,7 @@ const Easygame = () => {
     setcardtry(shuuffleCards(pairCards));
   }, []);
 
-  //tryyyy
-
-  // flip Cards on click function -- still
-  const flipCard = (id) => {
-    console.log("gg");
-  };
+ 
 
   let count = 0;
 
@@ -107,7 +102,8 @@ const Easygame = () => {
     console.log(rightMoves);
     if (rightMoves === 3) {
       let score = Moves / rightMoves;
-      if (score > 3) { //2
+      if (score > 2) {
+        //2
         alert("Bad score ): let's try again! ");
         refreshPage();
       } else {
@@ -151,7 +147,7 @@ const Easygame = () => {
           })
         );
 
-        console.log(cardtry);
+        
         count = 0;
         setFirstchoice(null);
       } else {
@@ -187,52 +183,66 @@ const Easygame = () => {
     window.location.reload(false);
   };
 
-
   return (
     <>
-
-<div className="relDiv"> 
-<p className="divAct"> <Link className="homeLink" to="/"> <FaBackward  className="homeIcon"/> <span> Home </span> </Link>   </p>
-
-      <section>
-        <p className="gameChoice"> Moves: {Moves} </p>
-        <p className="gameChoice">Right Moves: {rightMoves}</p>
-        <button className="restartBtn" onClick={refreshPage}>
+      <div className="relDiv">
+        <p className="divAct">
           {" "}
-          Restart Game{" "}
-        </button>{" "}
-      </section>
+          <Link className="homeLink" to="/">
+            {" "}
+            <FaBackward className="homeIcon" /> <span> Home </span>{" "}
+          </Link>{" "}
+        </p>
 
-      <div className="allCards">
-        {cardtry.map((item, i) => {
-          if (item.isflip) {
-            return (
-              <div className="cardDiv">
+        <section>
+          <p className="gameChoice"> Moves: {Moves} </p>
+          <p className="gameChoice">Right Moves: {rightMoves}</p>
+          <button className="restartBtn" onClick={refreshPage}>
+            {" "}
+            Restart Game{" "}
+          </button>{" "}
+        </section>
+
+        <div className="allCards">
+          {cardtry.map((item, i) => {
+            if (item.isflip) {
+              return (
+                <div className="cardDiv">
+                  {" "}
+                  <img className="front" src={item.img} />{" "}
+                </div>
+              );
+            } else {
+              return (
+                <div className="cardDiv">
+                  {" "}
+                  <img
+                    className="back"
+                    onClick={() => handleClick(item, i)}
+                    src={backimge}
+                  />{" "}
+                </div>
+              );
+            }
+          })}
+    
+        </div>
+
+        {/* <Timer time={15} go={timerState} /> */}
+
+        {
+          model ? (
+            <div className="model">
+              {" "}
+              Great score 😍 , let's go to the next level{" "}
+              <button className="letsBtn">
                 {" "}
-                <img className="front" src={item.img} />{" "}
-              </div>
-            );
-          } else {
-            return (
-              <div className="cardDiv">
-                {" "}
-                <img
-                  className="back"
-                  onClick={() => handleClick(item, i)}
-                  src={backimge}
-                />{" "}
-              </div>
-            );
-          }
-        })}
-        {console.log(cardtry)}
+                <Link to="/Gamelevel/Medium"> let's go </Link>{" "}
+              </button>{" "}
+            </div>
+          ) : null //absulote
+        }
       </div>
-
-{/* <Timer time={15} go={timerState}  /> */}
-
-    {model ? <div className="model" > Great score , let's go to the next level <button className="letsBtn" > <Link to="/Gamelevel/Medium"> let's go  </Link> </button> </div> : null //absulote 
-         } 
-        </div> 
     </>
   );
 }; ///////

@@ -171,12 +171,6 @@ const HardGame = () => {
     setcardtry(shuuffleCards(pairCards));
   }, []);
 
-  //tryyyy
-
-  // flip Cards on click function -- still
-  const flipCard = (id) => {
-    console.log("gg");
-  };
 
   let count = 0;
 
@@ -310,10 +304,10 @@ const HardGame = () => {
           model ? (
             <div className="model">
               {" "}
-              Great score , let's go to the next level{" "}
+              Great score , Congrats! you are officially a friends fan now 😍 {" "}
               <button className="letsBtn">
                 {" "}
-                <Link to="/Gamelevel/Medium"> let's go </Link>{" "}
+                <Link to="/"> GO BACK HOME </Link>{" "}
               </button>{" "}
             </div>
           ) : null //absulote
