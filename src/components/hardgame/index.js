@@ -179,7 +179,7 @@ const HardGame = () => {
     console.log(rightMoves);
     if (rightMoves === 8) {
       let score = Moves / rightMoves;
-      if (score > 4) {
+      if (score > 3) {
         //2
         alert("Bad score ): let's try again! ");
         refreshPage();
